@@ -41,6 +41,10 @@ exports.seed = function(knex, Promise) {
           poster_url: 'https://en.wikipedia.org/wiki/Finding_Dory#/media/File:Finding_Dory.jpg'
         },
 
-      ]);
-    });
-};
+      ])
+      .then(() => {
+        // After SQL INSERT, update the autoincrementing id counter
+        return knex.raw("SELECT setval('movies_id_seq', (SELECT MAX(id) FROM movies));")
+      })
+    })
+}

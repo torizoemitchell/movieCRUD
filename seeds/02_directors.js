@@ -25,6 +25,10 @@ exports.seed = function(knex, Promise) {
           id: 5,
           name: 'Dan Scanlon'
         }
-      ]);
-    });
-};
+      ])
+      .then(() => {
+        // After SQL INSERT, update the autoincrementing id counter
+        return knex.raw("SELECT setval('directors_id_seq', (SELECT MAX(id) FROM directors));")
+      })
+    })
+}
