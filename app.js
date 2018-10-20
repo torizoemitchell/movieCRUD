@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 var cors = require('cors')
 
 var indexRouter = require('./routes/index');
+var moviesRouter = require('./routes/movies')
 //app.use('/', indexRouter);
 //var usersRouter = require('./routes/users');
 
@@ -20,11 +21,10 @@ var app = express();
 app.use(cors())
 
 //routers
-var moviesRouter = require('./routes/movies')
-var directorsRouter = require('./routes/directors')
+
 app.use(bodyParser.json())
 app.use('/movies', moviesRouter)
-app.use('/directors', directorsRouter)
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

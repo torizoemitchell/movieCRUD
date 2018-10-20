@@ -8,6 +8,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           title: 'Pitch Perfect',
+          director:'Jason More',
           year: 2012,
           rating: 5,
           poster_url: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Pitch_Perfect_movie_poster.jpg'
@@ -15,6 +16,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 2,
           title: 'Mean Girls',
+          director: 'Mark Waters',
           year: 2004,
           rating: 5,
           poster_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Mean_Girls_film_poster.png/220px-Mean_Girls_film_poster.png'
@@ -22,6 +24,7 @@ exports.seed = function(knex, Promise) {
         {
           id: 3,
           title: 'Super Troopers',
+          director: 'Jay Chandrasekhar',
           year: 2001,
           rating: 5,
           poster_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Supertrooper.jpg/220px-Supertrooper.jpg'
@@ -29,16 +32,18 @@ exports.seed = function(knex, Promise) {
         {
           id: 4,
           title: 'Monsters University',
+          director: 'Dan Scanlon',
           year: 2013,
           rating: 3,
-          poster_url: 'https://en.wikipedia.org/wiki/Monsters_University#/media/File:Monsters_University_poster_3.jpg'
+          poster_url: 'https://m.media-amazon.com/images/M/MV5BMTUyODgwMDU3M15BMl5BanBnXkFtZTcwOTM4MjcxOQ@@._V1_.jpg'
         },
         {
           id: 5,
           title: 'Finding Dory',
+          director: 'Andrew Stanton',
           year: 2016,
           rating: 4,
-          poster_url: 'https://en.wikipedia.org/wiki/Finding_Dory#/media/File:Finding_Dory.jpg'
+          poster_url: 'http://www.gstatic.com/tv/thumb/v22vodart/12329215/p12329215_v_v8_ab.jpg'
         },
 
       ])

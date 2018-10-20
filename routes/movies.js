@@ -25,8 +25,9 @@ function checkIfRecordExists(req, res, next){
 //routes------------------------------------------------------------------------
 // READ ALL records for this table
 router.get('/', (req, res, next) => {
-  knex('movies').then((table) => {
-    res.json(table)
+  knex('movies')
+  .then((results) => {
+    res.json(results)
   })
   .catch((err) =>{
     next(err)
@@ -51,6 +52,7 @@ router.post('/', (req, res, next) => {
 // we'll need some POST body data in order to create a new (req.body)
   let newRecord = {
     title: req.body.title,
+    director: req.body.director,
     year: req.body.year,
     rating: req.body.rating,
     poster_url: req.body.poster_url
@@ -77,6 +79,7 @@ router.put('/:id', checkIfRecordExists, (req, res, next) => {
     //Check to see what new data was provided via req.body
       let myRecord = results[0]
       if( req.body.title ) { myRecord.title = req.body.title }
+      if( req.body.director ) { myRecord.director = req.body.director }
       if( req.body.year ) { myRecord.year = req.body.year }
       if( req.body.rating ) { myRecord.rating = req.body.rating }
       if( req.body.poster_url ) { myRecord.poster_url = req.body.poster_url }
