@@ -72,7 +72,6 @@ router.post('/', (req, res, next) => {
 // UPDATE ONE record for this table
 router.put('/:id', checkIfRecordExists, (req, res, next) => {
 //res.send('UPDATED MOVIE RECORD')
-// FIRST KNEX CALL: Using the given id (req.params.id), look up if that record actually exists
   knex('movies')
   .where('id', req.params.id)
   .then((results) => {
