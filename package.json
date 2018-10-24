@@ -16,5 +16,13 @@
     "knex": "^0.15.2",
     "morgan": "~1.9.0",
     "pg": "^7.5.0"
+  },
+  "engines": {
+    "node": "v10.12.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "nodemon": "nodemon <file_to_start_app>"
   }
-}
